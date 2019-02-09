@@ -10,7 +10,7 @@ import tkinter as tk
 import logging
 import re
 
-from scan import get_open_ports
+from scan import ScanManager
 
 IPV4_REGEX = re.compile('^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$')
 
@@ -70,7 +70,8 @@ class Interface(object):
         start_port = int(self.__entry1.get())
         end_port = int(self.__entry2.get()) + 1
 
-        ports = get_open_ports(address, start_port, end_port)
+        manager = ScanManager(5)
+        ports = manager.scan_address(address, start_port, end_port)
 
         for port in ports:
             self.__list.insert(tk.END, port)
