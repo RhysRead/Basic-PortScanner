@@ -75,7 +75,7 @@ class Interface(object):
         for port in ports:
             self.__list.insert(tk.END, port)
 
-        self.__header4.pack_forget()
+        self.__header4.grid_forget()
         self.__root.update()
 
         self.__list.insert(tk.END, 'END')
