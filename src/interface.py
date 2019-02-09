@@ -22,7 +22,6 @@ class Interface(object):
 
     def __make_gui(self):
         self.__root.title('Rhys PortScanner V1')
-        self.__root.geometry('500x400')
 
         self.__header0 = tk.Label(self.__root, text='IPv4 address to scan: ', font='Helvetica 18 bold')
         self.__header0.grid(row=0, column=0)
@@ -37,6 +36,9 @@ class Interface(object):
         self.__header3.grid(row=3, column=0)
 
         self.__header4 = tk.Label(self.__root, text='SCANNING', bg='red')
+
+        self.__header5 = tk.Label(self.__root, text='Made by Rhys Read 09/02/2019', font='Helvetica 9 bold', fg='grey')
+        self.__header5.grid(row=5, column=0)
 
         self.__entry0 = tk.Entry()
         self.__entry0.delete(0, tk.END)
