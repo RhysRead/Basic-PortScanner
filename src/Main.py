@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Main.py: The main file used to execute PortScanner."""
+"""main.py: The main file used to execute PortScanner."""
 
 __author__ = "Rhys Read"
 __copyright__ = "Copyright 2018, Rhys Read"
