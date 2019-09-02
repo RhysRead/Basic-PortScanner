@@ -40,6 +40,9 @@ class Interface(object):
         self.__header5 = tk.Label(self.__root, text='Made by Rhys Read 09/02/2019', font='Helvetica 9 bold', fg='grey')
         self.__header5.grid(row=5, column=0)
 
+        self.__header6 = tk.Label(self.__root, text='Scanning threads: ')
+        self.__header6.grid(row=0, column=3)
+
         self.__entry0 = tk.Entry()
         self.__entry0.delete(0, tk.END)
         self.__entry0.grid(row=1, column=0)
@@ -51,6 +54,10 @@ class Interface(object):
         self.__entry2 = tk.Entry()
         self.__entry2.delete(0, tk.END)
         self.__entry2.grid(row=1, column=2)
+
+        self.__entry3 = tk.Entry()
+        self.__entry3.delete(0, tk.END)
+        self.__entry3.grid(row=1, column=3)
 
         self.__button = tk.Button(self.__root, text='SCAN', font='Helvetica 18 bold', command=self.__scan_button)
         self.__button.grid(row=2, column=0)
@@ -72,7 +79,7 @@ class Interface(object):
         start_port = int(self.__entry1.get())
         end_port = int(self.__entry2.get()) + 1
 
-        manager = ScanManager(5)
+        manager = ScanManager(int(self.__entry3.get()))
         ports = manager.scan_address(address, start_port, end_port)
 
         for port in ports:
